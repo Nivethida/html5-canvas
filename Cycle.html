@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cycle</title>
+</head>
+<body>
+<canvas id="cycle" width="500" height="400" style="border: 1px solid black"></canvas>
+<script>
+    var can = document.getElementById('cycle');
+    var ctx = can.getContext('2d');
+
+    <!--Drawing tyres left-->
+    ctx.beginPath();
+    ctx.arc(120,250,70,0,2*Math.PI);
+    ctx.strokeStyle = "aqua";
+    ctx.stroke();
+     <!--Drawing Tyres right-->
+    ctx.beginPath();
+    ctx.arc(400,250,70,0,2*Math.PI);
+    ctx.stroke();
+
+    <!--chain part-->
+    ctx.beginPath();
+    ctx.arc(260,250,30,0,2*Math.PI);
+    ctx.stroke();
+
+    ctx.moveTo(120,250);
+    ctx.lineTo(260,250);
+    ctx.stroke();
+
+    <!--Cycle seat-->
+    ctx.moveTo(260,250);
+    ctx.lineTo(160,100);
+    ctx.stroke();
+    ctx.lineTo(120,100);
+    ctx.stroke();
+    ctx,moveTo(160,100);
+    ctx.lineTo(200,100);
+    ctx.stroke();
+
+    <!--Handle bar left-->
+    ctx.moveTo(120,250);
+    ctx.lineTo(172,120);
+    ctx.stroke();
+
+    <!--Handle Bar Right-->
+    ctx.moveTo(400,250);
+    ctx.lineTo(350,80);
+    ctx.stroke();
+
+    ctx.moveTo(350,80);
+    ctx.lineTo(310,100);
+    ctx.stroke();
+
+    ctx.moveTo(350,80);
+    ctx.lineTo(390,50);
+    ctx.stroke();
+
+    ctx.moveTo(172,120);
+    ctx.lineTo(360,120);
+    ctx.stroke();
+
+    ctx.moveTo(260,250);
+    ctx.lineTo(360,120);
+    ctx.stroke();
+
+    ctx.moveTo(235,230);
+    ctx.lineTo(200,180);
+    ctx.stroke();
+
+    ctx.moveTo(300,330);
+    ctx.lineTo(270,280);
+    ctx.stroke();
+</script>
+</body>
+</html>
