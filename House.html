@@ -22,8 +22,8 @@
     ctx.fillRect(110,230,60,40);
     ctx.fillStyle = "black";
     ctx.fillRect(175,230,60,40);
-    ctx.fillStyle = "black"
-    ctx.fillRect(110,275,60,40);;
+    ctx.fillStyle = "black";
+    ctx.fillRect(110,275,60,40);
     ctx.fillStyle = "black";
     ctx.fillRect(175,275,60,40);
 
@@ -46,31 +46,38 @@
     ctx.fillRect(330,390,60,40);
 
     <!--Drawing Doors-->
-
+    ctx.save();
     ctx.beginPath();
     ctx.scale(1,0.25);
     ctx.arc(170,1500,50,0,Math.PI,true);
     ctx.lineWidth = 3;
     ctx.stroke();
+    ctx.save();
 
     ctx.restore();
     ctx.beginPath();
     ctx.moveTo(120,1500);
     ctx.lineTo(120,2000);
     ctx.stroke();
+    ctx.save();
+
     ctx.restore();
     ctx.moveTo(170,1450);
     ctx.lineTo(170,2000);
     ctx.stroke();
+    ctx.save();
+
     ctx.restore();
     ctx.moveTo(220,1500);
     ctx.lineTo(220,2000);
     ctx.stroke();
+    ctx.save();
 
     ctx.restore();
     ctx.beginPath();
     ctx.arc(150,1800,10,0,2*Math.PI);
     ctx.stroke();
+    ctx.save();
 
     ctx.restore();
     ctx.beginPath();
@@ -79,8 +86,29 @@
 
 
      <!--Drawing Roof-->
+     ctx.restore();
+     ctx.beginPath();
+     ctx.moveTo(80,200);
+     ctx.lineTo(240,30);
+     ctx.stroke();
+     ctx.lineTo(420,200);
+     ctx.stroke();
+     ctx.fillStyle = "#CD5C5C";
+     ctx.fill();
 
+     <!--Drwaing the chimny-->
+     ctx.restore();
+     ctx.beginPath();
+     ctx.fillRect(300,60,60,120);
+     ctx.strokeRect(300,60,60,120);
 
+     ctx.restore();
+     ctx.beginPath();
+     ctx.scale(1,0.25);
+     ctx.arc(330,240,30,0,2*Math.PI);
+     ctx.stroke();
+     ctx.fillStyle = "#CD5C5C";
+     ctx.fill();
 
 </script>
 </body>
