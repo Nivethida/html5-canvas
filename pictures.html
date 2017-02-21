@@ -14,15 +14,15 @@
     ctx.beginPath();
     ctx.arc(200,150,50,0,2*Math.PI);
     ctx.stroke();
-    ctx.fillStyle = "#foff";
+    ctx.fillStyle = "#6495ed";
     ctx.fill();
 
     <!--Drawing mouth-->
     ctx.save();
-    ctx.rotate(Math.PI/6);
-    ctx.scale(1,0.5);
+    ctx.rotate(Math.PI/7.5);
+    ctx.scale(1,0.35);
     ctx.beginPath();
-    ctx.arc(250,120,20,0,2*Math.PI);
+    ctx.arc(240,240,20,0,2*Math.PI);
     ctx.stroke();
 
     <!--Drawing eyes left-->
@@ -57,31 +57,40 @@
     ctx.fillStyle = "black";
     ctx.fill();
 
+    <!--Drawing Nose-->
+    ctx.restore();
+    ctx.beginPath();
+    ctx.moveTo(780,310);
+    ctx.lineTo(740,310);
+    ctx.lineTo(780,280);
+    ctx.stroke();
 
+    <!--Drawing Hat-->
+    ctx.restore();
+    ctx.beginPath();
+    ctx.scale(1.5,0.25);
+    ctx.arc(530,750,150,0,2*Math.PI);
+    ctx.stroke();
+    ctx.fillStyle="blue";
+    ctx.fill();
 
+    ctx.restore();
+    ctx.beginPath();
+    ctx.scale(1,0.5);
+    ctx.arc(530,1500,70,0,Math.PI);
+    ctx.lineWidth = 5;
+    ctx.strokeStyle = 'black';
+    ctx.stroke();
 
+    ctx.restore();
+    ctx.fillRect(460,500,140,1000);
+    ctx.strokeRect(460,500,140,1000);
 
-
-    function writeMessage(canvas, message) {
-        var context = canvas.getContext('2d');
-        context.clearRect(0, 0, canvas.width, canvas.height);
-        context.font = '18pt Calibri';
-        context.fillStyle = 'black';
-        context.fillText(message, 10, 25);
-    }
-    function getMousePos(canvas, evt) {
-        var rect = canvas.getBoundingClientRect();
-        return {
-            x: evt.clientX - rect.left,
-            y: evt.clientY - rect.top
-        };
-    }
-    var canvas = document.getElementById('clown');
-    var context = canvas.getContext('2d');
-
-    canvas.addEventListener('mousemove', function(evt) {
-        var mousePos = getMousePos(canvas, evt);
-        var message = 'Mouse position: ' + mousePos.x + ',' + mousePos.y;
-        writeMessage(canvas, message);
-    }, false);
+    ctx.restore();
+    ctx.beginPath();
+    ctx.scale(1,0.75);
+    ctx.arc(530,640,70,0,2*Math.PI);
+    ctx.stroke();
+    ctx.fillStyle = "blue";
+    ctx.fill();
 </script>
