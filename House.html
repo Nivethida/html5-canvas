@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>House</title>
+</head>
+<body>
+<canvas id="home" width="500" height="500" style = "border: 1px solid black"></canvas>
+<script>
+    var can = document.getElementById('home');
+    var ctx = can.getContext('2d');
+
+    <!--Draw Basement-->
+    ctx.beginPath();
+    ctx.fillStyle = "#CD5C5C";
+    ctx.fillRect(80,200,340,340);
+    ctx.strokeRect(80,200,340,340);
+
+    <!--Drawing windows-->
+    ctx.beginPath();
+    ctx.fillStyle = "black";
+    ctx.fillRect(110,230,60,40);
+    ctx.fillStyle = "black";
+    ctx.fillRect(175,230,60,40);
+    ctx.fillStyle = "black"
+    ctx.fillRect(110,275,60,40);;
+    ctx.fillStyle = "black";
+    ctx.fillRect(175,275,60,40);
+
+    ctx.fillStyle = "black";
+    ctx.fillRect(265,230,60,40);
+    ctx.fillStyle = "black";
+    ctx.fillRect(330,230,60,40);
+    ctx.fillStyle = "black";
+    ctx.fillRect(265,275,60,40);
+    ctx.fillStyle = "black";
+    ctx.fillRect(330,275,60,40);
+
+    ctx.fillStyle = "black";
+    ctx.fillRect(265,345,60,40);
+    ctx.fillStyle = "black";
+    ctx.fillRect(330,345,60,40);
+    ctx.fillStyle = "black";
+    ctx.fillRect(265,390,60,40);
+    ctx.fillStyle = "black";
+    ctx.fillRect(330,390,60,40);
+
+    <!--Drawing Doors-->
+
+    ctx.beginPath();
+    ctx.scale(1,0.25);
+    ctx.arc(170,1500,50,0,Math.PI,true);
+    ctx.lineWidth = 3;
+    ctx.stroke();
+
+    ctx.restore();
+    ctx.beginPath();
+    ctx.moveTo(120,1500);
+    ctx.lineTo(120,2000);
+    ctx.stroke();
+    ctx.restore();
+    ctx.moveTo(170,1450);
+    ctx.lineTo(170,2000);
+    ctx.stroke();
+    ctx.restore();
+    ctx.moveTo(220,1500);
+    ctx.lineTo(220,2000);
+    ctx.stroke();
+
+    ctx.restore();
+    ctx.beginPath();
+    ctx.arc(150,1800,10,0,2*Math.PI);
+    ctx.stroke();
+
+    ctx.restore();
+    ctx.beginPath();
+    ctx.arc(190,1800,10,0,2*Math.PI);
+    ctx.stroke();
+
+
+     <!--Drawing Roof-->
+
+
+
+</script>
+</body>
+</html>
