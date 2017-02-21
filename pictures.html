@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+</body>
+</html>
+<head>
+    <meta charset="UTF-8">
+    <title>Clown</title>
+</head>
+<canvas id="clown" width="400" height="300" style="border: solid 1px black" ></canvas>
+<script>
+    var can = document.getElementById('clown');
+    var ctx = can.getContext('2d');
+    ctx.beginPath();
+    ctx.arc(200,150,50,0,2*Math.PI);
+    ctx.stroke();
+    ctx.fillStyle = "#foff";
+    ctx.fill();
+
+    <!--Drawing mouth-->
+    ctx.save();
+    ctx.rotate(Math.PI/6);
+    ctx.scale(1,0.5);
+    ctx.beginPath();
+    ctx.arc(250,120,20,0,2*Math.PI);
+    ctx.stroke();
+
+    <!--Drawing eyes left-->
+    ctx.restore();
+    ctx.scale(1,0.5);
+    ctx.beginPath();
+    ctx.arc(170,260,10,0,2*Math.PI);
+    ctx.stroke();
+
+    <!--Inside of eye left-->
+    ctx.restore();
+    ctx.scale(0.5,2);
+    ctx.beginPath();
+    ctx.arc(335,130,5,0,2*Math.PI);
+    ctx.stroke();
+    ctx.fillStyle = "black";
+    ctx.fill();
+
+    <!--Drawing eyes right-->
+    ctx.restore();
+    ctx.scale(1,0.25);
+    ctx.beginPath();
+    ctx.arc(420,520,20,0,2*Math.PI);
+    ctx.stroke();
+
+    <!--Inside of eye left-->
+    ctx.restore();
+    ctx.scale(0.5,2);
+    ctx.beginPath();
+    ctx.arc(830,260,10,0,2*Math.PI);
+    ctx.stroke();
+    ctx.fillStyle = "black";
+    ctx.fill();
+
+
+
+
+
+
+    function writeMessage(canvas, message) {
+        var context = canvas.getContext('2d');
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.font = '18pt Calibri';
+        context.fillStyle = 'black';
+        context.fillText(message, 10, 25);
+    }
+    function getMousePos(canvas, evt) {
+        var rect = canvas.getBoundingClientRect();
+        return {
+            x: evt.clientX - rect.left,
+            y: evt.clientY - rect.top
+        };
+    }
+    var canvas = document.getElementById('clown');
+    var context = canvas.getContext('2d');
+
+    canvas.addEventListener('mousemove', function(evt) {
+        var mousePos = getMousePos(canvas, evt);
+        var message = 'Mouse position: ' + mousePos.x + ',' + mousePos.y;
+        writeMessage(canvas, message);
+    }, false);
+</script>
